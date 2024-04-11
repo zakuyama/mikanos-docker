@@ -8,7 +8,7 @@ on:
     - cron: '0 18 * * 0'
 
 env:
-  TARGET_IMAGE: ghcr.io/sarisia/mikanos
+  TARGET_IMAGE: ghcr.io/zakuyama/mikanos # change user name
 
 permissions:
   contents: read
