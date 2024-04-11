@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-  schedule:
+  # schedule:
     # # every sunday 3:00 am jst
     # - cron: '0 18 * * 0'
 
