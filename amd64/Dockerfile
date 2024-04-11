@@ -93,7 +93,8 @@ RUN git clone --recursive https://github.com/tianocore/edk2.git edk2 \
 #  && rm -rf edk2
 
 # clone mikanos devenv
-RUN git clone https://github.com/uchan-nos/mikanos-build.git osbook
+RUN git clone https://github.com/uchan-nos/mikanos-build.git osbook \
+  && (cd osbook && git checkout 8d4882122ec548ef680b6b5a2ae841a0fd4d07a1)
 
 # download standard libraries
 RUN curl -L https://github.com/uchan-nos/mikanos-build/releases/download/v2.0/x86_64-elf.tar.gz \
