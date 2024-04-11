@@ -1,4 +1,4 @@
-FROM ghcr.io/sarisia/vscode-dev-containers-multiarch/base:ubuntu-20.04
+FROM ghcr.io/sarisia/vscode-dev-containers-multiarch/base:ubuntu-22.04
 
 ARG USERNAME=vscode
 
