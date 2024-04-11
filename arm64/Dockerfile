@@ -6,9 +6,9 @@ ARG USERNAME=vscode
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     build-essential \
-    llvm-14-dev \
-    lld-14 \
-    clang-14 \
+    llvm-7-dev \
+    lld-7 \
+    clang-7 \
     nasm \
     acpica-tools \
     uuid-dev \
@@ -82,7 +82,7 @@ RUN for item in \
         clang++ \
         clang-cpp \
     ; do \
-        update-alternatives --install "/usr/bin/${item}" "${item}" "/usr/bin/${item}-14" 50 \
+        update-alternatives --install "/usr/bin/${item}" "${item}" "/usr/bin/${item}-7" 50 \
     ; done
 
 
