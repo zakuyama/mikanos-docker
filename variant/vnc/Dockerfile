@@ -1,4 +1,4 @@
-ARG BASE=ghcr.io/sarisia/mikanos:latest
+ARG BASE=ghcr.io/zakuyama/mikanos:latest
 FROM ${BASE}
 
 ARG NOVNC_VERSION=1.2.0
