@@ -3,12 +3,12 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-  schedule:
-    # every sunday 3:00 am jst
-    - cron: '0 18 * * 0'
+  # schedule:
+    # # every sunday 3:00 am jst
+    # - cron: '0 18 * * 0'
 
 env:
-  TARGET_IMAGE: ghcr.io/sarisia/mikanos
+  TARGET_IMAGE: ghcr.io/zakuyama/mikanos
 
 permissions:
   contents: read
@@ -51,11 +51,11 @@ jobs:
           docker push ${{ env.TARGET_IMAGE }}:${{ matrix.arch }} && \
           docker push ${{ env.TARGET_IMAGE }}:vnc-${{ matrix.arch }}
 
-      - uses: sarisia/actions-status-discord@v1
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: ghcr.io/sarisia/mikanos (${{ matrix.arch }})
+      # - uses: sarisia/actions-status-discord@v1
+      #   if: always()
+      #   with:
+      #     webhook: ${{ secrets.DISCORD_WEBHOOK }}
+      #     title: ghcr.io/sarisia/mikanos (${{ matrix.arch }})
 
   manifest:
     runs-on: ubuntu-22.04
@@ -79,8 +79,8 @@ jobs:
             --amend ${{ env.TARGET_IMAGE }}:vnc-amd64 && \
           docker manifest push ${{ env.TARGET_IMAGE }}:vnc
 
-      - uses: sarisia/actions-status-discord@v1
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: ghcr.io/sarisia/mikanos (amend)
+      # - uses: sarisia/actions-status-discord@v1
+      #   if: always()
+      #   with:
+      #     webhook: ${{ secrets.DISCORD_WEBHOOK }}
+      #     title: ghcr.io/sarisia/mikanos (amend)
